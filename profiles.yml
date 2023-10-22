@@ -1,0 +1,15 @@
+# Note that only one of these targets is required
+
+my-bigquery-db:
+  target: dev
+  outputs:
+    dev:
+      type: bigquery
+      method: oauth
+      project: rugged-abacus-401316
+      dataset: employee_dataset
+      threads: 4
+      keyfile: /secrets/dbt-service-keyfile
+      timeout_seconds: 300
+      priority: interactive
+      retries: 1
